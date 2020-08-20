@@ -1,5 +1,5 @@
 import localeReducer from "../reducer";
-import { LOCALE_EN, LOCALE_JA } from "../index";
+import { LOCALE_EN, LOCALE_JA } from "..";
 import { TOGGLE_LANGUAGE } from "../actions";
 
 describe("Locale Reducer", () => {

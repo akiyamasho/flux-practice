@@ -13,7 +13,7 @@ WORKDIR /build
 RUN npm ci
 
 # Copy the rest of the source code over
-COPY . /build
+COPY .. /build
 
 # Build frontend bundle, remove source maps, and prune devDependencies
 RUN npm run build && \

@@ -1,6 +1,6 @@
 import { getBrowserLocale } from "./utils";
 import { TOGGLE_LANGUAGE } from "./actions";
-import { LOCALE_EN, LOCALE_JA } from "./index";
+import { LOCALE_EN, LOCALE_JA } from ".";
 import { AllowedLocale } from "./types";
 
 const localeReducer = (
