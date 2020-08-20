@@ -6,8 +6,8 @@ import (
     "net/http"
 )
 
-func runModel(w http.ResponseWriter, r *http.Request){
-    s := `{}`
+func getModelPredictions(w http.ResponseWriter, r *http.Request){
+    s := `{ modelPredictions: {} }`
     js, err := json.Marshal(s)
 
     if err != nil {
@@ -20,7 +20,7 @@ func runModel(w http.ResponseWriter, r *http.Request){
 }
 
 func handleRequests() {
-    http.HandleFunc("/api/runModel", runModel)
+    http.HandleFunc("/api/getModelPredictions", getModelPredictions)
     log.Fatal(http.ListenAndServe(":10000", nil))
 }
 

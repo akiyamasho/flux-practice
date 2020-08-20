@@ -15,11 +15,11 @@ export const callApi = ({
     headers,
     data,
 }: {
-    proxy: string;
+    proxy?: string;
     method: HttpMethod;
     url: string;
-    headers: Object;
-    data: any;
+    headers?: Object;
+    data?: any;
 }) => {
     const formData = new FormData();
 
