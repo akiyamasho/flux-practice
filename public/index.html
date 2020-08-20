@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+            name="description"
+            content="Web site created using create-react-app"
+        />
+        <title>React App</title>
+        <style type="text/css">
+            body {
+                color: #000000;
+                background: #ffffff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial,
+                    system-ui, sans-serif;
+                text-rendering: optimizeLegibility;
+                -moz-font-feature-settings: "kern=1";
+                -ms-font-feature-settings: "kern" 1;
+                margin: 0px;
+                display: flex;
+            }
+
+            @keyframes loadingAnimation {
+                0% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.3;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .html-loading {
+                animation: loadingAnimation 1s linear infinite;
+                color: #8f8f8f;
+            }
+
+            @media only screen and (max-width: 768px) {
+                body {
+                    font-size: 12px;
+                }
+            }
+
+            @media only screen and (max-width: 320px) {
+                body {
+                    font-size: 6px;
+                }
+            }
+
+            .html-loading {
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                top: 0;
+                left: 0;
+                position: fixed;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <div class="html-loading">
+                <div>Loading...</div>
+                <div>読み込み中...</div>
+            </div>
+        </div>
+    </body>
+</html>

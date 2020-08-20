@@ -1,0 +1,13 @@
+# python
+env/
+venv/
+
+# docker
+Dockerfile
+.dockerignore
+
+node_modules
+build
+.env
+
+.git
