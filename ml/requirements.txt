@@ -2,4 +2,4 @@ numpy
 pandas
 sklearn
 jupyter
-tensorflow
+tensorflow==1.15.3

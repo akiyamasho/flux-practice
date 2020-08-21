@@ -4,9 +4,18 @@ import (
     "encoding/json"
     "log"
     "net/http"
+    tf "github.com/tensorflow/tensorflow/tensorflow/go"
 )
 
 func getModelPredictions(w http.ResponseWriter, r *http.Request){
+    model, err := tf.LoadSavedModel("titanic",
+             []string{"atag"}, nil)
+    if err != nil {
+             log.Fatal(err)
+    }
+
+    _ = model
+
     s := `{ modelPredictions: {} }`
     js, err := json.Marshal(s)
 
