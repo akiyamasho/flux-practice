@@ -8,21 +8,21 @@ import (
 )
 
 func getModelPredictions(w http.ResponseWriter, r *http.Request){
+    // Simply load the dummy model
+
     model, err := tf.LoadSavedModel("titanic",
              []string{"atag"}, nil)
-    if err != nil {
-             log.Fatal(err)
-    }
-
-    _ = model
-
-    s := `{ modelPredictions: {} }`
-    js, err := json.Marshal(s)
-
     if err != nil {
         http.Error(w, err.Error(), http.StatusInternalServerError)
         return
     }
+
+    _ = model
+
+    // Return dummy data
+
+    s := `{ titanic_survival: { rose: 1.0, jack : 0.0 } }`
+    js, err := json.Marshal(s)
 
     w.Header().Set("Content-Type", "application/json")
     w.Write(js)
