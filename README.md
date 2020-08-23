@@ -22,7 +22,7 @@ See corresponding `README.md` for `backend`, `frontend`, and `ml` for details
 If you just want to check how the end-to-end works, simply use Docker compose:
 
 1. `docker-compose up`
-2. Access the frontend at htpp://localhost:5000
+2. Access the frontend at http://localhost:5000
 3. Access the backend at http://localhost:10000/api/getModelPredictions
 
 ### Flux Setup
