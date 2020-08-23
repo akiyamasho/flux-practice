@@ -1,4 +1,4 @@
-FROM truevolve/golang-python3 AS build-env
+FROM golang:1.15.0-buster AS build-env
 
 # Setup tensorflow-go
 

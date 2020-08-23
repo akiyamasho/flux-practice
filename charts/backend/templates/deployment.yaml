@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - name: {{ .Values.image.portName }}
+            containerPort: {{ .Values.image.port }}
+            protocol: {{ .Values.image.protocol }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.image.probePath }}
+              port: {{ .Values.image.portName }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.image.probePath }}
+              port: {{ .Values.image.portName }}
