@@ -40,40 +40,39 @@ k3d cluster create test
 
 3. Setup `flux` in the cluster
 
-a. Create the `flux` namespace
-
-```bash
-kubectl create ns flux
-```
-
-b. Install Flux
-
-```bash
-export GHUSER="YOURUSER"
-fluxctl install \
---git-user=${GHUSER} \
---git-email=${GHUSER}@users.noreply.github.com \
---git-url=git@github.com:${GHUSER}/flux-practice \
---git-path=namespaces,workloads \
---namespace=flux | kubectl apply -f -
-```
-
-c. Wait for Flux to start
-
-```bash
-kubectl -n flux rollout status deployment/flux
-``` 
-
-d. Get the key with the command below and provide write access to your forked GitHub repo in `Setting -> Deploy Keys`:
-
-```bash
-fluxctl identity --k8s-fwd-ns flux
-```
-
-e. Install the frontend and backend charts with `helm`
-
-```bash
-helm install backend charts/backend
-helm install frontend charts/frontend
-
-```
+    a. Create the `flux` namespace
+    
+    ```bash
+    kubectl create ns flux
+    ```
+    
+    b. Install Flux
+    
+    ```bash
+    export GHUSER="YOURUSER"
+    fluxctl install \
+    --git-user=${GHUSER} \
+    --git-email=${GHUSER}@users.noreply.github.com \
+    --git-url=git@github.com:${GHUSER}/flux-practice \
+    --git-path=namespaces,workloads \
+    --namespace=flux | kubectl apply -f -
+    ```
+    
+    c. Wait for Flux to start
+    
+    ```bash
+    kubectl -n flux rollout status deployment/flux
+    ``` 
+    
+    d. Get the key with the command below and provide write access to your forked GitHub repo in `Setting -> Deploy Keys`:
+    
+    ```bash
+    fluxctl identity --k8s-fwd-ns flux
+    ```
+    
+    e. Install the frontend and backend charts with `helm`
+    
+    ```bash
+    helm install backend charts/backend
+    helm install frontend charts/frontend
+    ```
