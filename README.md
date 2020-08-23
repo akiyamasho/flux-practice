@@ -32,13 +32,23 @@ For the scope of this test, simply use `test` as the cluster name
 
 1. Fork the repo
 
-2. Create a local cluster
+2. Create a local cluster and select it (**Make sure you are in the correct cluster before running the next commands!**)
 
 ```bash
 k3d cluster create test
+
+# Cluster named `test` in `k3d` is named `k3d-test`
+kubectl config use-context k3d-test
 ```
 
-3. Setup `flux` in the cluster
+3. Install the `backend` and `frontend` charts
+    
+```bash
+helm install backend charts/backend
+helm install frontend charts/frontend
+```
+
+4. Setup `flux` in the cluster
 
     a. Create the `flux` namespace
     
@@ -68,11 +78,4 @@ k3d cluster create test
     
     ```bash
     fluxctl identity --k8s-fwd-ns flux
-    ```
-    
-    e. Install the frontend and backend charts with `helm`
-    
-    ```bash
-    helm install backend charts/backend
-    helm install frontend charts/frontend
     ```
