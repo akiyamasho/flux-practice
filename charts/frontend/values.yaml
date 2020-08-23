@@ -1,0 +1,16 @@
+# environment defaults internally to development
+# however, consumers can override it using a custom values file.
+environment:
+name: frontend
+image:
+  repository: docker.io/akiyamasho/flux-practice-frontend
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: latest
+  port: 5000
+  portName: http
+  protocol: TCP
+  probePath: /
+
+serviceAccount:
+  name: frontend-sa

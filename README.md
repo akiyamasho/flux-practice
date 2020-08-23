@@ -13,6 +13,7 @@ Just some quick practice for setting up flux on a local k3d cluster
 - [Docker](https://docs.docker.com/get-docker/)
 - [`k3d` v3.0.1](https://github.com/rancher/k3d/releases/tag/v3.0.1)
 - [`fluxctl`](https://docs.fluxcd.io/en/1.18.0/references/fluxctl.html)
+- [`helm` v3.3](https://github.com/helm/helm/releases/tag/v3.3.0)
 - [Optional] [`k9s` for visualisation](https://github.com/derailed/k9s)
 
 See corresponding `README.md` for `backend`, `frontend`, and `ml` for details
@@ -67,4 +68,12 @@ d. Get the key with the command below and provide write access to your forked Gi
 
 ```bash
 fluxctl identity --k8s-fwd-ns flux
+```
+
+e. Install the frontend and backend charts with `helm`
+
+```bash
+helm install backend charts/backend
+helm install frontend charts/frontend
+
 ```
