@@ -5,7 +5,7 @@ Just some quick practice for setting up flux on a local k3d cluster
 ### Arch
 
 - MLE - (python, tensorflow) simple linear classifier that takes titanic dataset for survival predictions, because my heart will go on
-- Backend - (go) Simple API `/api/runModel` that simply runs a model predictions from `mle/` folder
+- Backend - (go) Simple API `/api/runModel` that simply loads the built titanic model and returns Rose and Jack's survival
 - Frontend - (react-redux) Simple frontend that retrieves from backend API, based on this simple [CRA boilerplate](https://github.com/akiyamasho/cra-boilerplate) by yours truly
 
 ### Requirements
@@ -23,7 +23,7 @@ See corresponding `README.md` for `backend`, `frontend`, and `ml` for details
 If you just want to check how the end-to-end works, simply use Docker compose:
 
 1. `docker-compose up`
-2. Access the frontend at htpp://localhost:5000
+2. Access the frontend at http://localhost:5000
 3. Access the backend at http://localhost:10000/api/getModelPredictions
 
 ### Flux Setup
