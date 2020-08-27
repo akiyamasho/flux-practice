@@ -1,12 +1,12 @@
 version: '2.0'
 services:
   backend:
-    image: docker.io/akiyamasho/flux-practice-backend:latest
+    image: docker.io/akiyamasho/flux-practice-backend:1.0
     build: ./backend
     ports:
       - "10000:10000"
   frontend:
-    image: docker.io/akiyamasho/flux-practice-frontend:latest
+    image: docker.io/akiyamasho/flux-practice-frontend:1.0
     build: ./frontend
     ports:
       - "5000:5000"
