@@ -64,7 +64,6 @@ helm install frontend charts/frontend
     --git-user=${GHUSER} \
     --git-email=${GHUSER}@users.noreply.github.com \
     --git-url=git@github.com:${GHUSER}/flux-practice \
-    --git-path=charts/backend,charts/frontend \
     --namespace=flux | kubectl apply -f -
     ```
     

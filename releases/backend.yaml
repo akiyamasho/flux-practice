@@ -1,0 +1,18 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: backend
+  namespace: default
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: backend
+  chart:
+    git: ssh://git@github.com/akiyamasho/flux-practice
+    ref: master
+    path: charts/backend
+  values:
+    image:
+      repository: docker.io/akiyamasho/flux-practice-backend
+      tag: 1.0
