@@ -1,6 +1,7 @@
 # Flux Practice
 
-Just some quick practice for setting up flux on a local k3d cluster
+Just some quick practice for setting up flux on a local k3d cluster.
+This repository is no longer maintained.
 
 ### Arch
 
